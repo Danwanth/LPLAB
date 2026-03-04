@@ -1,0 +1,25 @@
+--- Input ---
+
+a=b+c
+
+--- Output ---
+
+Enter TAC instruction: a=b+c
+
+Generated Code:
+MOV R1, b
+MOV R2, c
+ADD R1, R2
+MOV a, R1
+
+--- Input ---
+
+x=y
+
+--- Output ---
+
+Enter TAC instruction: x=y
+
+Generated Code:
+MOV R1, y
+MOV x, R1
