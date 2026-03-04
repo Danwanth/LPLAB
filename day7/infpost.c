@@ -44,13 +44,13 @@ void infixToPostfix(char infix[], char postfix[]) {
                 postfix[j++] = c;
         }
         else {
-            while (top != -1 && precedence(stack[top]) >= precedence(infix[i]))
+            while (top != -1 && precedence(stack[top]) >= precedence(infix[i]))//if the operator in the stack has higher precedenc then it needs to 
                 postfix[j++] = pop();
             push(infix[i]);
         }
     }
 
-    while (top != -1)
+    while (top != -1)//rest of the operators from stack to postfix
         postfix[j++] = pop();
 
     postfix[j] = '\0';
@@ -63,23 +63,24 @@ void generateTAC(char postfix[]) {
     int tacTop = -1;
     char temp[10];
 
-    for (int i = 0; postfix[i] != '\0'; i++) {
+    for (int i = 0; postfix[i] != '\0'; i++) {//abc*+
 
         if (isalnum(postfix[i])) {
-            tacStack[++tacTop][0] = postfix[i];
+            tacStack[++tacTop][0] = postfix[i];//abc goes here as 1,2,3
             tacStack[tacTop][1] = '\0';
         }
         else {
-            char op = postfix[i];
+            char op = postfix[i];//* is encountered here
 
-            char op2[10], op1[10];
-            strcpy(op2, tacStack[tacTop--]);
+            char op2[10], op1[10];//b and c is stored in op 1 and 2
+            strcpy(op2, tacStack[tacTop--]);//strcpy is used in both,no need of [0] or [1] here
             strcpy(op1, tacStack[tacTop--]);
 
             sprintf(temp, "t%d", tempCount++);
-            printf("%s = %s %c %s\n", temp, op1, op, op2);
+            printf("%s = %s %c %s\n", temp, op1, op, op2);// pringint it here
 
-            strcpy(tacStack[++tacTop], temp);
+            strcpy(tacStack[++tacTop], temp);//idk why but temp has t1 rn and that is the top of the stack oh wait t1 needs to be used later as the operand ig it
+
         }
     }
 }
