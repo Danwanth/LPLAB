@@ -1,0 +1,28 @@
+--- Input (input.c) ---
+
+int a, b;
+if a < b
+a = a + 10;
+
+--- Output ---
+
+int <Keyword>
+a <Identifier #0>
+, <Special Symbol>
+b <Identifier #1>
+; <Special Symbol>
+if <Keyword>
+a <Identifier #0>
+< <Relational>
+b <Identifier #1>
+a <Identifier #0>
+= <Assignment>
+a <Identifier #0>
++ <Arithmetic Operator>
+10 <Constant>
+; <Special Symbol>
+
+Symbol Table
+Index	Identifier
+0	a
+1	b

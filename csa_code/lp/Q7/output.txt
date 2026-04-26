@@ -1,0 +1,21 @@
+--- Input ---
+
+a=a+b*c
+x=a-b/c+d
+
+--- Output ---
+
+Enter expressions (Ctrl+D to stop):
+
+Input: a=a+b*c
+Three Address Code:
+t1 = b * c
+t2 = a + 1
+a = t2
+
+Input: x=a-b/c+d
+Three Address Code:
+t1 = b / c
+t2 = a - 1
+t3 = 1 + d
+x = t3
