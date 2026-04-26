@@ -17,7 +17,7 @@ void check_reduce() {
         len = strlen(prod[i]) - 3;   // length of RHS
 
         if (len <= top + 1) {
-            strncpy(temp, stack + top - len + 1, len);
+            strncpy(temp, stack + top - len + 1, len);   //CAREFUL STRNCPY NOT STRCPY
             temp[len] = '\0';
 
             if (strcmp(temp, prod[i] + 3) == 0) {
@@ -33,7 +33,7 @@ void check_reduce() {
 }
 
 
-}
+
 
 
 int main() {
