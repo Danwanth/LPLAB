@@ -1,0 +1,9 @@
+aaaa        (4 a's)
+aaaaaaaa    (8 a's)
+aaaaaaaaaaaa (12 a's)
+
+S → S A | A  
+A → a a a a | epsilon
+
+SA->AA
+    A=aaaaaaaaa
