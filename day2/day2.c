@@ -69,7 +69,47 @@ int main() {
             printf("%s <Number>\n", word);
         }
 
-        /* OPERATORS */
+        /* RELATIONAL OPERATORS */
+        else if (input[i] == '=' && input[i+1] == '=') {
+            printf("== <Relational Operator>\n");
+            i += 2;
+        }
+        else if (input[i] == '!' && input[i+1] == '=') {
+            printf("!= <Relational Operator>\n");
+            i += 2;
+        }
+        else if (input[i] == '<' && input[i+1] == '=') {
+            printf("<= <Relational Operator>\n");
+            i += 2;
+        }
+        else if (input[i] == '>' && input[i+1] == '=') {
+            printf(">= <Relational Operator>\n");
+            i += 2;
+        }
+        else if (input[i] == '<') {
+            printf("< <Relational Operator>\n");
+            i++;
+        }
+        else if (input[i] == '>') {
+            printf("> <Relational Operator>\n");
+            i++;
+        }
+
+        /* LOGICAL OPERATORS */
+        else if (input[i] == '&' && input[i+1] == '&') {
+            printf("&& <Logical Operator>\n");
+            i += 2;
+        }
+        else if (input[i] == '|' && input[i+1] == '|') {
+            printf("|| <Logical Operator>\n");
+            i += 2;
+        }
+        else if (input[i] == '!') {
+            printf("! <Logical Operator>\n");
+            i++;
+        }
+
+        /* ARITHMETIC + ASSIGNMENT */
         else if (strchr("+-*/=%", input[i])) {
             printf("%c <Operator>\n", input[i]);
             i++;
@@ -86,6 +126,7 @@ int main() {
             i++;
         }
 
+        /* INVALID */
         else {
             printf("%c <Invalid>\n", input[i]);
             i++;
